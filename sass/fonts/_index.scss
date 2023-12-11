@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('ubuntu-regular-webfont.eot');
+	src: url('ubuntu-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('ubuntu-regular-webfont.woff') format('woff'), url('ubuntu-regular-webfont.woff2') format('woff2'),
+		url('ubuntu-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('ubuntu-bold-webfont.eot');
+	src: url('ubuntu-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		url('ubuntu-bold-webfont.woff') format('woff'), url('ubuntu-bold-webfont.woff2') format('woff2'),
+		url('ubuntu-bold-webfont.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
