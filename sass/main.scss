@@ -3,3 +3,166 @@
 @use 'colors' as *;
 @use 'components' as *;
 @use 'animations' as *;
+
+body {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	font-family: 'Ubuntu', sans-serif;
+	background-color: $sixth;
+}
+
+.nav {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 60px;
+	grid-column: 1/-1;
+	z-index: 1;
+
+	&__links {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-direction: column;
+		transform: translateX(-100%);
+		width: 100%;
+		height: 100vh;
+		height: 100svh;
+		background-color: $sixth;
+	}
+
+	&__link {
+		padding: 4em 2em;
+		font-size: 2rem;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $secondary;
+	}
+
+	&__btn {
+		height: 100%;
+		padding: 10px 20px;
+	}
+
+	&__burger-bars {
+		height: 100%;
+	}
+}
+
+.header {
+	grid-column: 1/-1;
+	z-index: 0;
+
+	&__title {
+		position: relative;
+		padding: 4em 0 0;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 2rem;
+		letter-spacing: -0.1em;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			top: 90%;
+			height: 5px;
+			width: 80px;
+			background-color: $primary;
+		}
+
+		&::after {
+			transform: translateX(5px);
+		}
+
+		&::before {
+			transform: translateX(-85px);
+		}
+	}
+
+	&__subtitle {
+		padding: 0 0.5em 6em;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 1rem;
+		letter-spacing: -0.09em;
+	}
+}
+
+.aside {
+	display: none;
+}
+
+.main {
+	grid-column: 1/-1;
+}
+
+@media (min-width: 992px) {
+	body {
+		grid-template-columns: 200px 1fr 200px;
+	}
+
+	.nav {
+		&__links {
+			flex-direction: row;
+			transform: translateX(0);
+			height: 100%;
+		}
+
+		&__link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			padding: 0 20px;
+			font-size: 1.6rem;
+		}
+
+		&__btn {
+			display: none;
+		}
+	}
+
+	.header {
+		&__title {
+			padding: 2em 0 0;
+			font-size: 4rem;
+			letter-spacing: -0.4rem;
+
+			&::after,
+			&::before {
+				top: 83%;
+				width: 150px;
+			}
+
+			&::after {
+				transform: translateX(30px);
+			}
+
+			&::before {
+				transform: translateX(-180px);
+			}
+		}
+
+		&__subtitle {
+			padding-bottom: 3em;
+			font-size: 1.6rem;
+			letter-spacing: -0.1rem;
+		}
+	}
+
+	.aside {
+		display: block;
+		&__left {
+			grid-column: 1/2;
+		}
+
+		&__right {
+			grid-column: -2/-1;
+		}
+	}
+
+	.main {
+		grid-column: 2/-2;
+	}
+}
