@@ -4,53 +4,74 @@
 @use 'components' as *;
 @use 'animations' as *;
 
+// -------------------MOBILE-------------------
+
 body {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	font-family: 'Ubuntu', sans-serif;
-	background-color: $sixth;
+	background-color: $fourth;
 }
 
+// NAVIGATION
 .nav {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	position: sticky;
+	top: 0;
 	height: 60px;
 	grid-column: 1/-1;
 	z-index: 1;
 
 	&__links {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		position: absolute;
+		top: 0;
+		left: 0;
 		transform: translateX(-100%);
 		width: 100%;
 		height: 100vh;
 		height: 100svh;
-		background-color: $sixth;
+		background-color: $fourth-shadow;
+		transition: transform .5s;
 	}
 
 	&__link {
-		padding: 4em 2em;
-		font-size: 2rem;
+		margin: 2em 0;
+		padding: 0.5em 0.1em;
+		font-size: 1.4rem;
 		font-weight: bold;
 		text-transform: uppercase;
+		letter-spacing: -0.05em;
 		color: $secondary;
 	}
 
 	&__btn {
 		height: 100%;
-		padding: 10px 20px;
+		padding: 0.8em;
+		border-top-left-radius: 50%;
+		border-bottom-left-radius: 50%;
+		background-color: $fourth-shadow;
+		z-index: 2;
 	}
 
 	&__burger-bars {
 		height: 100%;
 	}
+
+	&__active{
+		transform: translateX(0);
+	}
 }
 
+// HEADER
 .header {
 	grid-column: 1/-1;
+	overflow: hidden;
 	z-index: 0;
 
 	&__title {
@@ -72,11 +93,11 @@ body {
 		}
 
 		&::after {
-			transform: translateX(5px);
+			transform: translateX(10px);
 		}
 
 		&::before {
-			transform: translateX(-85px);
+			transform: translateX(-90px);
 		}
 	}
 
@@ -87,23 +108,120 @@ body {
 		font-size: 1rem;
 		letter-spacing: -0.09em;
 	}
+
+	&__text-box {
+		margin: 0 auto;
+		padding: 0 1em;
+		max-width: 1200px;
+	}
+
+	&__text {
+		margin-bottom: 1em;
+		line-height: 1.1em;
+		letter-spacing: -0.05em;
+		color: $third;
+	}
+
+	&__highlighted {
+		font-weight: bold;
+		color: $secondary;
+	}
 }
 
+// ASIDE
 .aside {
 	display: none;
 }
 
+// MAIN
 .main {
 	grid-column: 1/-1;
 }
+
+// FOOTER
+
+
+// -------------------SMALL-------------------
+
+@media (min-width: 576px) {
+	// HEADER
+	.header {
+		&__title {
+			padding: 2em 0 0;
+			font-size: 2.5rem;
+			letter-spacing: -0.2rem;
+
+			&::after,
+			&::before {
+				top: 83%;
+				width: 100px;
+			}
+
+			&::after {
+				transform: translateX(15px);
+			}
+
+			&::before {
+				transform: translateX(-115px);
+			}
+		}
+
+		&__subtitle {
+			padding-bottom: 3em;
+			font-size: 1.2rem;
+			letter-spacing: -0.1rem;
+		}
+
+		&__text-box{
+			padding: 0 2.5em;
+		}
+	}
+}
+
+// -------------------MEDIUM-------------------
+
+@media (min-width: 768px) {
+	// HEADER
+	.header {
+		&__title {
+			font-size: 3rem;
+			letter-spacing: -0.3rem;
+
+			&::after,
+			&::before {
+				width: 130px;
+			}
+
+			&::after {
+				transform: translateX(20px);
+			}
+
+			&::before {
+				transform: translateX(-150px);
+			}
+		}
+
+		&__subtitle {
+			font-size: 1.4rem;
+		}
+
+		&__text-box{
+			padding: 0 3.5em;
+		}
+	}
+}
+
+// -------------------LARGE-------------------
 
 @media (min-width: 992px) {
 	body {
 		grid-template-columns: 200px 1fr 200px;
 	}
 
+	// NAVIGATION
 	.nav {
 		&__links {
+			justify-content: space-evenly;
 			flex-direction: row;
 			transform: translateX(0);
 			height: 100%;
@@ -114,8 +232,7 @@ body {
 			justify-content: center;
 			align-items: center;
 			height: 100%;
-			padding: 0 20px;
-			font-size: 1.6rem;
+			padding: 0 0.1em;
 		}
 
 		&__btn {
@@ -123,15 +240,14 @@ body {
 		}
 	}
 
+	// HEADER
 	.header {
 		&__title {
-			padding: 2em 0 0;
 			font-size: 4rem;
 			letter-spacing: -0.4rem;
 
 			&::after,
 			&::before {
-				top: 83%;
 				width: 150px;
 			}
 
@@ -145,12 +261,20 @@ body {
 		}
 
 		&__subtitle {
-			padding-bottom: 3em;
 			font-size: 1.6rem;
-			letter-spacing: -0.1rem;
+		}
+
+		&__text-box {
+			padding: 0 1.5em;
+		}
+
+		&__text {
+			font-size: 1.2rem;
+			line-height: 1.3em;
 		}
 	}
 
+	// ASIDE
 	.aside {
 		display: block;
 		&__left {
@@ -162,6 +286,7 @@ body {
 		}
 	}
 
+	// MAIN
 	.main {
 		grid-column: 2/-2;
 	}

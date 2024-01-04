@@ -1,0 +1,39 @@
+@use '../colors' as *;
+
+.nav {
+	&__link {
+		position: relative;
+		transition: color 0.3s;
+		z-index: 0;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: -5%;
+            bottom: 5%;
+            height: 3px;
+            width: 110%;
+            background-color: $primary;
+            transition: height 0.3s;
+            z-index: -1;
+        }
+
+        &:hover {
+            color: $fourth;
+
+            &::after {
+                height: 40px;
+            }
+        }
+	}
+}
+
+@media (min-width: 992px) {
+	.nav {
+		&__link {
+			&::after {
+				bottom: 20%;
+			}
+		}
+	}
+}

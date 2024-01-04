@@ -67,6 +67,42 @@ table {
   font-style: normal;
   font-display: swap;
 }
+.nav__link {
+  position: relative;
+  transition: color 0.3s;
+  z-index: 0;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: -5%;
+  bottom: 5%;
+  height: 3px;
+  width: 110%;
+  background-color: #fcc900;
+  transition: height 0.3s;
+  z-index: -1;
+}
+.nav__link:hover {
+  color: #dedede;
+}
+.nav__link:hover::after {
+  height: 40px;
+}
+
+@media (min-width: 992px) {
+  .nav__link::after {
+    bottom: 20%;
+  }
+}
+@keyframes mobileNav {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -78,38 +114,54 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: sticky;
+  top: 0;
   height: 60px;
   grid-column: 1/-1;
   z-index: 1;
 }
 .nav__links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
   transform: translateX(-100%);
   width: 100%;
   height: 100vh;
   height: 100svh;
-  background-color: #dedede;
+  background-color: rgba(222, 222, 222, 0.9450980392);
+  transition: transform 0.5s;
 }
 .nav__link {
-  padding: 4em 2em;
-  font-size: 2rem;
+  margin: 2em 0;
+  padding: 0.5em 0.1em;
+  font-size: 1.4rem;
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: -0.05em;
   color: #333129;
 }
 .nav__btn {
   height: 100%;
-  padding: 10px 20px;
+  padding: 0.8em;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: rgba(222, 222, 222, 0.9450980392);
+  z-index: 2;
 }
 .nav__burger-bars {
   height: 100%;
 }
+.nav__active {
+  transform: translateX(0);
+}
 
 .header {
   grid-column: 1/-1;
+  overflow: hidden;
   z-index: 0;
 }
 .header__title {
@@ -129,10 +181,10 @@ body {
   background-color: #fcc900;
 }
 .header__title::after {
-  transform: translateX(5px);
+  transform: translateX(10px);
 }
 .header__title::before {
-  transform: translateX(-85px);
+  transform: translateX(-90px);
 }
 .header__subtitle {
   padding: 0 0.5em 6em;
@@ -140,6 +192,21 @@ body {
   text-align: center;
   font-size: 1rem;
   letter-spacing: -0.09em;
+}
+.header__text-box {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 1200px;
+}
+.header__text {
+  margin-bottom: 1em;
+  line-height: 1.1em;
+  letter-spacing: -0.05em;
+  color: rgba(67, 67, 67, 0.9803921569);
+}
+.header__highlighted {
+  font-weight: bold;
+  color: #333129;
 }
 
 .aside {
@@ -150,11 +217,58 @@ body {
   grid-column: 1/-1;
 }
 
+@media (min-width: 576px) {
+  .header__title {
+    padding: 2em 0 0;
+    font-size: 2.5rem;
+    letter-spacing: -0.2rem;
+  }
+  .header__title::after, .header__title::before {
+    top: 83%;
+    width: 100px;
+  }
+  .header__title::after {
+    transform: translateX(15px);
+  }
+  .header__title::before {
+    transform: translateX(-115px);
+  }
+  .header__subtitle {
+    padding-bottom: 3em;
+    font-size: 1.2rem;
+    letter-spacing: -0.1rem;
+  }
+  .header__text-box {
+    padding: 0 2.5em;
+  }
+}
+@media (min-width: 768px) {
+  .header__title {
+    font-size: 3rem;
+    letter-spacing: -0.3rem;
+  }
+  .header__title::after, .header__title::before {
+    width: 130px;
+  }
+  .header__title::after {
+    transform: translateX(20px);
+  }
+  .header__title::before {
+    transform: translateX(-150px);
+  }
+  .header__subtitle {
+    font-size: 1.4rem;
+  }
+  .header__text-box {
+    padding: 0 3.5em;
+  }
+}
 @media (min-width: 992px) {
   body {
     grid-template-columns: 200px 1fr 200px;
   }
   .nav__links {
+    justify-content: space-evenly;
     flex-direction: row;
     transform: translateX(0);
     height: 100%;
@@ -164,19 +278,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 0 20px;
-    font-size: 1.6rem;
+    padding: 0 0.1em;
   }
   .nav__btn {
     display: none;
   }
   .header__title {
-    padding: 2em 0 0;
     font-size: 4rem;
     letter-spacing: -0.4rem;
   }
   .header__title::after, .header__title::before {
-    top: 83%;
     width: 150px;
   }
   .header__title::after {
@@ -186,9 +297,14 @@ body {
     transform: translateX(-180px);
   }
   .header__subtitle {
-    padding-bottom: 3em;
     font-size: 1.6rem;
-    letter-spacing: -0.1rem;
+  }
+  .header__text-box {
+    padding: 0 1.5em;
+  }
+  .header__text {
+    font-size: 1.2rem;
+    line-height: 1.3em;
   }
   .aside {
     display: block;
