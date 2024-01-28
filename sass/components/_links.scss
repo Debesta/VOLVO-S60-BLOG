@@ -6,25 +6,25 @@
 		transition: color 0.3s;
 		z-index: 0;
 
-        &::after {
-            content: '';
-            position: absolute;
-            left: -5%;
-            bottom: 5%;
-            height: 3px;
-            width: 110%;
-            background-color: $primary;
-            transition: height 0.3s;
-            z-index: -1;
-        }
+		&::after {
+			content: '';
+			position: absolute;
+			left: -5%;
+			bottom: 5%;
+			height: 3px;
+			width: 110%;
+			background-color: $primary;
+			transition: height 0.3s;
+			z-index: -1;
+		}
 
-        &:hover {
-            color: $fourth;
+		&:hover {
+			color: $fourth;
 
-            &::after {
-                height: 40px;
-            }
-        }
+			&::after {
+				height: 40px;
+			}
+		}
 	}
 }
 
@@ -32,7 +32,7 @@
 	.nav {
 		&__link {
 			&::after {
-				bottom: 20%;
+				bottom: 18%;
 			}
 		}
 	}

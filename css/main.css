@@ -92,7 +92,7 @@ table {
 
 @media (min-width: 992px) {
   .nav__link::after {
-    bottom: 20%;
+    bottom: 18%;
   }
 }
 @keyframes mobileNav {
