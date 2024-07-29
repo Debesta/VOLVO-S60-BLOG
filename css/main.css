@@ -216,6 +216,25 @@ body {
 .main {
   grid-column: 1/-1;
 }
+.main .section__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.main .section__title::after, .main .section__title::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 60px;
+  background-color: #fcc900;
+}
+.main .section__title::after {
+  transform: translate(10px, 10px);
+}
+.main .section__title::before {
+  transform: translate(-70px, 10px);
+}
 
 @media (min-width: 576px) {
   .header__title {

@@ -136,6 +136,31 @@ body {
 // MAIN
 .main {
 	grid-column: 1/-1;
+
+	.section{
+		&__title{
+			font-size: 1.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+			&::after,
+			&::before {
+				content: '';
+				position: absolute;
+				height: 5px;
+				width: 60px;
+				background-color: $primary;
+			}
+	
+			&::after {
+				transform: translate(10px, 10px);
+			}
+	
+			&::before {
+				transform: translate(-70px, 10px);
+			}
+		}
+	}
 }
 
 // FOOTER
