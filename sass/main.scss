@@ -37,7 +37,7 @@ body {
 		height: 100vh;
 		height: 100svh;
 		background-color: $fourth-shadow;
-		transition: transform .5s;
+		transition: transform 0.5s;
 	}
 
 	&__link {
@@ -63,7 +63,7 @@ body {
 		height: 100%;
 	}
 
-	&__active{
+	&__active {
 		transform: translateX(0);
 	}
 }
@@ -137,27 +137,32 @@ body {
 .main {
 	grid-column: 1/-1;
 
-	.section{
-		&__title{
-			font-size: 1.5rem;
+	.section {
+		padding: 0 1em;
+		margin: 2em auto 0;
+		max-width: 1200px;
+
+		&__title {
+			font-size: 1.1rem;
 			font-weight: bold;
 			text-transform: uppercase;
 			text-align: center;
+			letter-spacing: -0.09em;
 			&::after,
 			&::before {
 				content: '';
 				position: absolute;
-				height: 5px;
-				width: 60px;
+				height: 4px;
+				width: 40px;
 				background-color: $primary;
 			}
-	
+
 			&::after {
-				transform: translate(10px, 10px);
+				transform: translate(5px, 7px);
 			}
-	
+
 			&::before {
-				transform: translate(-70px, 10px);
+				transform: translate(-45px, 7px);
 			}
 		}
 	}
@@ -196,8 +201,29 @@ body {
 			letter-spacing: -0.1rem;
 		}
 
-		&__text-box{
+		&__text-box {
 			padding: 0 2.5em;
+		}
+	}
+
+	// MAIN
+	.main {
+		.section {
+			&__title {
+				font-size: 1.3rem;
+				&::after,
+				&::before {
+					width: 45px;
+				}
+
+				&::after {
+					transform: translate(7px, 7px);
+				}
+
+				&::before {
+					transform: translate(-50px, 7px);
+				}
+			}
 		}
 	}
 }
@@ -229,8 +255,29 @@ body {
 			font-size: 1.4rem;
 		}
 
-		&__text-box{
+		&__text-box {
 			padding: 0 3.5em;
+		}
+	}
+
+	// MAIN
+	.main {
+		.section {
+			&__title {
+				font-size: 1.5rem;
+				&::after,
+				&::before {
+					width: 50px;
+				}
+
+				&::after {
+					transform: translate(10px, 9px);
+				}
+
+				&::before {
+					transform: translate(-60px, 9px);
+				}
+			}
 		}
 	}
 }
@@ -238,6 +285,7 @@ body {
 // -------------------LARGE-------------------
 
 @media (min-width: 992px) {
+	// BODY
 	body {
 		grid-template-columns: 200px 1fr 200px;
 	}
@@ -313,5 +361,24 @@ body {
 	// MAIN
 	.main {
 		grid-column: 2/-2;
+
+		.section {
+			&__title {
+				font-size: 1.7rem;
+				&::after,
+				&::before {
+					height: 5px;
+					width: 60px;
+				}
+
+				&::after {
+					transform: translate(10px, 10px);
+				}
+
+				&::before {
+					transform: translate(-70px, 10px);
+				}
+			}
+		}
 	}
 }
