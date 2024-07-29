@@ -11,16 +11,17 @@
 <body>
     <nav class="nav">
         <div class="nav__links">
-            <a href="#" class="nav__link">wstęp</a>
-            <a href="#" class="nav__link">dane techniczne</a>
-            <a href="#" class="nav__link">spis treści</a>
-            <a href="#" class="nav__link">kontakt</a>
+            <a href="#header" class="nav__link">wstęp</a>
+            <a href="#news" class="nav__link">aktualności</a>
+            <a href="#specifications" class="nav__link">dane techniczne</a>
+            <a href="#inspections" class="nav__link">Przeglądy</a>
+            <a href="#contact" class="nav__link">kontakt</a>
         </div>
         <button class="nav__btn">
             <img class="nav__burger-bars" src="img/icons/burger-bars.webp" aria-label="Przycisk rozwijający nawigację">
         </button>
     </nav>
-    <header class="header">
+    <header class="header" id="header">
         <h1 class="header__title">debesta blog</h1>
         <h2 class="header__subtitle">Z pasji do motoryzacji i majsterkowania</h2>
         <div class="header__text-box">
@@ -60,8 +61,13 @@
     </header>
     <aside class="aside__left"></aside>
     <aside class="aside__right"></aside>
-    <main class="main"></main>
-    <footer class="footer"></footer>
+    <main class="main" id="main">
+        <section class="main__news section" id="news"></section>
+        <section class="main__specifications section" id="specifications"></section>
+        <section class="main__inspections section" id="inspections"></section>
+        <section class="main__contact section" id="contact"></section>
+    </main>
+    <footer class="footer" id="footer"></footer>
     <script src="/js/mobileNav.js"></script>
 </body>
 
