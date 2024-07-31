@@ -252,6 +252,7 @@ body {
 .main__card {
   position: relative;
   width: 100%;
+  margin: 2em 0;
   padding-bottom: 40%;
   background-color: #fff;
   border-radius: 3em;
