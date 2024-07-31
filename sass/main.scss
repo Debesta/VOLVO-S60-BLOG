@@ -179,10 +179,28 @@ body {
 	&__card{
 		position: relative;
 		width: 100%;
-		height: 0;
-		padding-bottom: 100%;
+		padding-bottom: 40%;
 		background-color: #fff;
 		border-radius: 3em;
+		overflow: hidden;
+	}
+
+	&__card-img{
+		position: absolute;
+		height: 100%;
+		width: 40%;
+		background-image: url('../img/images/TEST.png');
+		background-position: center;
+		background-size: cover;
+	}
+
+	&__card-textbox{
+		position: absolute;
+		inset: 0 40%;
+		height: 100%;
+		width: 60%;
+		padding: 2em;
+		background-color: tomato;
 	}
 }
 
