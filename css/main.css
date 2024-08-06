@@ -284,7 +284,7 @@ body {
   inset: 0;
   height: 100%;
   width: 40%;
-  background-image: url("../img/images/TEST.png");
+  background-image: url("../img/images/LOGO.png");
   background-position: center;
   background-size: cover;
   background-color: #efefef;
@@ -302,7 +302,7 @@ body {
 }
 .main__card-line {
   position: absolute;
-  inset: 25% 41.5%;
+  inset: 25% 40%;
   height: 50%;
   width: 4px;
   background-color: #fcc900;
