@@ -180,7 +180,7 @@ body {
 		position: relative;
 		width: 100%;
 		margin: 1.5em 0;
-		padding-bottom: 60%;
+		padding-bottom: 50%;
 		transition: transform 0.3s;
 		color: $secondary;
 
@@ -306,6 +306,33 @@ body {
 					transform: translate(-50px, 7px);
 				}
 			}
+		}
+
+		&__box{
+			max-width: 80%;
+			margin: 0 auto;
+		}
+
+		&__card-img{
+			border-radius: 1.5em 0 0 1.5em;
+		} 
+
+		&__card-title{
+			font-size: 1.3rem; 
+		}
+
+		&__card-textbox{ 
+			padding: 1.25em; 
+			font-size: 1rem;
+			border-radius: 0 1.5em 1.5em 0; 
+		}
+
+		&__card{
+			padding-bottom: 40%;  
+
+			&::after, &::before{ 
+				border-radius: 1.5em 0; 
+			} 
 		}
 	}
 }

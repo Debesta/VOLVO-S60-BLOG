@@ -253,7 +253,7 @@ body {
   position: relative;
   width: 100%;
   margin: 1.5em 0;
-  padding-bottom: 60%;
+  padding-bottom: 50%;
   transition: transform 0.3s;
   color: #333129;
 }
@@ -348,6 +348,27 @@ body {
   }
   .main .section__title::before {
     transform: translate(-50px, 7px);
+  }
+  .main__box {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .main__card-img {
+    border-radius: 1.5em 0 0 1.5em;
+  }
+  .main__card-title {
+    font-size: 1.3rem;
+  }
+  .main__card-textbox {
+    padding: 1.25em;
+    font-size: 1rem;
+    border-radius: 0 1.5em 1.5em 0;
+  }
+  .main__card {
+    padding-bottom: 40%;
+  }
+  .main__card::after, .main__card::before {
+    border-radius: 1.5em 0;
   }
 }
 @media (min-width: 768px) {
