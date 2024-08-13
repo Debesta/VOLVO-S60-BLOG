@@ -172,13 +172,14 @@ body {
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
-		width: 100%;
+		min-width: 100%;
 		padding: .5em;
 	}
 
 	&__card{
 		position: relative;
 		width: 100%;
+		max-width: 600px;
 		margin: 1.5em 0;
 		padding-bottom: 50%;
 		transition: transform 0.3s;
@@ -390,6 +391,24 @@ body {
 				}
 			}
 		}
+
+		&__box{
+			max-width: 80%;
+			margin: 0 auto;
+		} 
+
+		&__card-title{
+			font-size: 1.5rem; 
+		}
+
+		&__card-textbox{ 
+			padding: 1.5em; 
+		}
+
+		&__card{
+			padding-bottom: 30%;  
+		}
+
 	}
 }
 
@@ -492,8 +511,19 @@ body {
 			}
 		}
 
-		&__card{
-			padding-bottom: 40%;
+		&__card-title{
+			font-size: 1.7rem; 
 		}
+
+		&__card-textbox{ 
+			padding: 2em; 
+			font-size: 1.2rem;
+		}
+
+		&__card{
+			padding-bottom: 40%;  
+			max-width: 1200px;
+		}
+
 	}
 }
