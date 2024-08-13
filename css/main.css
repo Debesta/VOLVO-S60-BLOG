@@ -313,6 +313,10 @@ body {
   z-index: 1;
 }
 
+.footer {
+  grid-column: 1/-1;
+}
+
 @media (min-width: 576px) {
   .header__title {
     padding: 2em 0 0;

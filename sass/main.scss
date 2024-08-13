@@ -251,7 +251,9 @@ body {
 }
 
 // FOOTER
-
+	.footer{
+		grid-column: 1/-1;
+	}
 // -------------------SMALL-------------------
 
 @media (min-width: 576px) {
