@@ -118,7 +118,7 @@ body {
   top: 0;
   height: 60px;
   grid-column: 1/-1;
-  z-index: 1;
+  z-index: 100;
 }
 .nav__links {
   display: flex;
@@ -150,7 +150,7 @@ body {
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
   background-color: rgba(222, 222, 222, 0.9450980392);
-  z-index: 2;
+  z-index: 101;
 }
 .nav__burger-bars {
   height: 100%;
@@ -231,7 +231,7 @@ body {
 .main .section__title::after, .main .section__title::before {
   content: "";
   position: absolute;
-  height: 4px;
+  height: 3px;
   width: 40px;
   background-color: #fcc900;
 }
@@ -241,19 +241,19 @@ body {
 .main .section__title::before {
   transform: translate(-45px, 7px);
 }
-.main__card-box {
+.main__box {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  padding: 1em;
+  padding: 0.5em;
 }
 .main__card {
   position: relative;
   width: 100%;
-  margin: 2em 0;
-  padding-bottom: 40%;
+  margin: 1.5em 0;
+  padding-bottom: 60%;
   transition: transform 0.3s;
   color: #333129;
 }
@@ -265,16 +265,15 @@ body {
   position: absolute;
   width: 100%;
   height: 55%;
+  border-radius: 1em 0;
   z-index: 1;
 }
 .main__card::after {
-  border-left: 4px solid #fcc900;
-  border-radius: 3em 0;
+  border-left: 3px solid #fcc900;
 }
 .main__card::before {
   inset: 45% 0 0 0;
-  border-right: 4px solid #fcc900;
-  border-radius: 3em 0;
+  border-right: 3px solid #fcc900;
 }
 .main__card-img, .main__card-textbox {
   position: absolute;
@@ -288,23 +287,28 @@ body {
   background-position: center;
   background-size: cover;
   background-color: #efefef;
-  border-radius: 3em 0 0 3em;
+  border-radius: 1em 0 0 1em;
+}
+.main__card-title {
+  margin-bottom: 0.5em;
+  font-size: 1.1rem;
 }
 .main__card-textbox {
   position: absolute;
   inset: 0 40%;
   height: 100%;
   width: 60%;
-  padding: 2em;
+  padding: 1em;
+  font-size: 0.9rem;
   background-color: #efefef;
   overflow: hidden;
-  border-radius: 0 3em 3em 0;
+  border-radius: 0 1em 1em 0;
 }
 .main__card-line {
   position: absolute;
   inset: 25% 40%;
   height: 50%;
-  width: 4px;
+  width: 3px;
   background-color: #fcc900;
   z-index: 1;
 }
@@ -446,5 +450,8 @@ body {
   }
   .main .section__title::before {
     transform: translate(-70px, 10px);
+  }
+  .main__card {
+    padding-bottom: 40%;
   }
 }/*# sourceMappingURL=main.css.map */
