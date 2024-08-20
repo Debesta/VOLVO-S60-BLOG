@@ -500,15 +500,19 @@ body {
   .main .section__title::before {
     transform: translate(-70px, 10px);
   }
-  .main__card-title {
-    font-size: 1.7rem;
-  }
   .main__card-textbox {
     padding: 2em;
-    font-size: 1.2rem;
   }
   .main__card {
     padding-bottom: 40%;
     max-width: 1200px;
+  }
+}
+@media (min-width: 1200px) {
+  .main__card-title {
+    font-size: 1.7rem;
+  }
+  .main__card-textbox {
+    font-size: 1.2rem;
   }
 }/*# sourceMappingURL=main.css.map */

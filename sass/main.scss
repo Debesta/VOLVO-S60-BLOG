@@ -167,16 +167,16 @@ body {
 		}
 	}
 
-	&__box{
+	&__box {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
 		min-width: 100%;
-		padding: .5em;
+		padding: 0.5em;
 	}
 
-	&__card{
+	&__card {
 		position: relative;
 		width: 100%;
 		max-width: 600px;
@@ -185,11 +185,12 @@ body {
 		transition: transform 0.3s;
 		color: $secondary;
 
-		&:hover{
+		&:hover {
 			transform: scale(0.95);
 		}
 
-		&::after, &::before{
+		&::after,
+		&::before {
 			content: '';
 			position: absolute;
 			width: 100%;
@@ -198,21 +199,22 @@ body {
 			z-index: 1;
 		}
 
-		&::after{
+		&::after {
 			border-left: 3px solid $primary;
 		}
 
-		&::before{
+		&::before {
 			inset: 45% 0 0 0;
 			border-right: 3px solid $primary;
 		}
 	}
 
-	&__card-img, &__card-textbox{
+	&__card-img,
+	&__card-textbox {
 		position: absolute;
 	}
 
-	&__card-img{
+	&__card-img {
 		position: absolute;
 		inset: 0;
 		height: 100%;
@@ -225,12 +227,12 @@ body {
 		z-index: 1;
 	}
 
-	&__card-title{
+	&__card-title {
 		margin-bottom: 0.5em;
 		font-size: 1.1rem;
 	}
 
-	&__card-textbox{
+	&__card-textbox {
 		position: absolute;
 		inset: 0 40%;
 		height: 100%;
@@ -242,17 +244,17 @@ body {
 		border-radius: 0 1em 1em 0;
 		z-index: 0;
 
-		&::after{
+		&::after {
 			position: absolute;
 			content: '';
 			bottom: 0;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(0deg, rgba(239,239,239,1) 0%, rgba(221,221,221,0) 100%);
+			background: linear-gradient(0deg, rgba(239, 239, 239, 1) 0%, rgba(221, 221, 221, 0) 100%);
 		}
 	}
 
-	&__card-line{
+	&__card-line {
 		position: absolute;
 		inset: 25% 40%;
 		height: 50%;
@@ -263,9 +265,9 @@ body {
 }
 
 // FOOTER
-	.footer{
-		grid-column: 1/-1;
-	}
+.footer {
+	grid-column: 1/-1;
+}
 // -------------------SMALL-------------------
 
 @media (min-width: 576px) {
@@ -322,31 +324,32 @@ body {
 			}
 		}
 
-		&__box{
+		&__box {
 			max-width: 80%;
 			margin: 0 auto;
 		}
 
-		&__card-img{
+		&__card-img {
 			border-radius: 1.5em 0 0 1.5em;
-		} 
-
-		&__card-title{
-			font-size: 1.3rem; 
 		}
 
-		&__card-textbox{ 
-			padding: 1.25em; 
+		&__card-title {
+			font-size: 1.3rem;
+		}
+
+		&__card-textbox {
+			padding: 1.25em;
 			font-size: 1rem;
-			border-radius: 0 1.5em 1.5em 0; 
+			border-radius: 0 1.5em 1.5em 0;
 		}
 
-		&__card{
-			padding-bottom: 40%;  
+		&__card {
+			padding-bottom: 40%;
 
-			&::after, &::before{ 
-				border-radius: 1.5em 0; 
-			} 
+			&::after,
+			&::before {
+				border-radius: 1.5em 0;
+			}
 		}
 	}
 }
@@ -403,23 +406,22 @@ body {
 			}
 		}
 
-		&__box{
+		&__box {
 			max-width: 80%;
 			margin: 0 auto;
-		} 
-
-		&__card-title{
-			font-size: 1.5rem; 
 		}
 
-		&__card-textbox{ 
-			padding: 1.5em; 
+		&__card-title {
+			font-size: 1.5rem;
 		}
 
-		&__card{
-			padding-bottom: 30%;  
+		&__card-textbox {
+			padding: 1.5em;
 		}
 
+		&__card {
+			padding-bottom: 30%;
+		}
 	}
 }
 
@@ -522,19 +524,25 @@ body {
 			}
 		}
 
-		&__card-title{
-			font-size: 1.7rem; 
+		&__card-textbox {
+			padding: 2em;
 		}
 
-		&__card-textbox{ 
-			padding: 2em; 
-			font-size: 1.2rem;
-		}
-
-		&__card{
-			padding-bottom: 40%;  
+		&__card {
+			padding-bottom: 40%;
 			max-width: 1200px;
 		}
+	}
+}
 
+@media (min-width: 1200px) {
+	.main {
+		&__card-title {
+			font-size: 1.7rem;
+		}
+
+		&__card-textbox {
+			font-size: 1.2rem;
+		}
 	}
 }
