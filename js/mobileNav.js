@@ -1,9 +1,3 @@
-// Import y'all
-import { yall } from "yall-js";
-
-// Invoke!
-yall();
-
 const btn = document.querySelector('.nav__btn')
 const box = document.querySelector('.nav__links')
 const links = document.querySelectorAll('.nav__link')
